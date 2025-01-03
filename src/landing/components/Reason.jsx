@@ -1,29 +1,30 @@
 import React from 'react'
-
+import { useTranslation } from 'react-i18next'
 function Reasons() {
-
+  const {t,i18n} = useTranslation();
   const reasonsBox = [
     {
-        title : "Enjoy on your TV",
-        description : "Watch on Smart TVs, Playstation,Xbox, Chromecast, Apple TV, Blu-ray players, and more",
-        src : "/images/televison.png" 
+        title: t("reasonsToJoin.enjoyOnTv.title"), 
+        description: t("reasonsToJoin.enjoyOnTv.description"), 
+        src: "/images/televison.png"
     },
     {
-        title : "Download your shows to watch offline",
-        description : "Save your favorites easily and always have something to watch.",
-        src :  "/images/download.png" 
+        title: t("reasonsToJoin.downloadToWatchOffline.title"),
+        description: t("reasonsToJoin.downloadToWatchOffline.description"),
+        src: "/images/download.png"
     },
     {
-        title : "Watch everywhere",
-        description : "Stream unlimited movies and TVshows on your phone, tablet,laptop, and TV.",
-        src : "/images/scope.png" 
+        title: t("reasonsToJoin.watchEverywhere.title"),
+        description: t("reasonsToJoin.watchEverywhere.description"),
+        src: "/images/scope.png"
     },
     {
-        title : "Create profiles for kids",
-        description : "Send kids on adventures with their favorite characters in a space made just for them — free with your membership.",
-        src : "/images/profile.png"
+        title: t("reasonsToJoin.profilesForKids.title"),
+        description: t("reasonsToJoin.profilesForKids.description"),
+        src: "/images/profile.png"
     }
-]
+];
+
   return (
     <div className=' flex w-[970px] bg-black  mx-auto gap-4  '>
         {reasonsBox.map((item,index)=>(

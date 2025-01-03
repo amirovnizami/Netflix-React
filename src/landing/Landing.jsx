@@ -67,9 +67,8 @@ function Landing() {
                             exit="exit"
                             transition={{ duration: 0.3, ease: "easeOut" }}
                         >
-                            {/* Close Button */}
                             <button
-                                className="absolute top-4 right-4 text-white"
+                                className="absolute top-4 right-4 z-10 text-white"
                                 onClick={() => setModalOpen(false)}
                                 aria-label="Close Modal"
                             >
@@ -84,10 +83,16 @@ function Landing() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
+                            <div className="relative">
+                                <div className='absolute w-full h-full bg-gradient-to-tr from-zinc-900 from-25% via-transparent via-55% flex items-end'>
+                                    <h1 className='text-white text-5xl font-bold my-4 ml-5'>{data.title}</h1>
+                                </div>
+                                <img className='' src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt="" />
+                            </div>
 
-                            <img className='' src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt="" />
+
                             <div className='px-6 relative'>
-                                <h1 className='text-white text-2xl font-bold my-4'>{data.title}</h1>
+
                                 <div>
                                     <GenreItems genres={data.genres} />
                                 </div>
@@ -102,7 +107,7 @@ function Landing() {
                 )
             }
             <FAQ />
-            <Footer />
+            <Footer HasEmailInput="true" />
         </div>
     );
 }

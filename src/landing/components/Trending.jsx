@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import CustomSelect from './CustomSelect'
 import Reason from './Reason'
 import MovieCard from './MovieCard'
+import { useTranslation } from 'react-i18next'
 
 function trending({setItem}) {
+
+    const {t,i18n} = useTranslation();
     const options = [{title :"Movie",value : "movie"}, {title :"Tv Shows",value : "tv"}]
     const [selectedOption, setSelectedOption] = useState("movie");
     const [data, setData] = useState([])
@@ -19,7 +22,6 @@ function trending({setItem}) {
         setData(data.content);
         const item = data.content
 
-        console.log(item);
     }
 
     useEffect(() => {
@@ -27,7 +29,7 @@ function trending({setItem}) {
     }, [selectedOption])
     return (
         <div className='  bg-[#000000] px-[150px] no-scrollbar  '>
-            <h2 className='text-white font-medium text-2xl font-roboto mb-4'>Trending Now</h2>
+            <h2 className='text-white font-medium text-2xl font-roboto mb-4'>{t('trendingNow')}</h2>
             <CustomSelect selectedOption={selectedOption} setSelectedOption={setSelectedOption} options={options} />
             <div className=' flex overflow-scroll bg-black h-auto mx-auto gap-2 no-scrollbar '>
                 {data.map((item, index) => (
@@ -35,7 +37,7 @@ function trending({setItem}) {
                 ))}
             </div>
             <div className='mt-[80px]'>
-                <h2 className='text-white font-medium size text-2xl font-roboto mb-4'>More Reasons to Join Now</h2>
+                <h2 className='text-white font-medium size text-2xl font-roboto mb-4'>{t('reasonsToJoin.title')}</h2>
                 <Reason />
             </div>
 

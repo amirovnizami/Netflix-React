@@ -13,3 +13,7 @@
         scrollbar-width: none;  /* Firefox */
   }
 }
+
+.bg-image{
+    background-image: url("https://image.tmdb.org/t/p/original/2meX1nMdScFOoV4370rqHWKmXhY.jpg");
+}

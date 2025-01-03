@@ -11,7 +11,6 @@ function MovieCard({ item, index,setItem }) {
     </div>
   )
 
-  console.log(item)
 }
 
 export default MovieCard
