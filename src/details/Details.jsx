@@ -12,10 +12,6 @@ const Details = () => {
     const [trailersData, setTrailersData] = useState({})
     const [loading, setLoading] = useState([])
 
-    if (!id || !type) {
-        return <div className='text-white'>Geçersiz veri</div>
-    }
-
     const getDetails = async () => {
         try {
             const response = await fetch(`http://localhost:5001/api/v1/${type}/${id}/details`, {
